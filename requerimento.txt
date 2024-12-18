@@ -1,18 +1,18 @@
+Environment Configuration
 pandas
+
 pyspark
-python 13.12.7
 
-# Configuração do Ambiente
+python 13.12.7 This project requires the following environment variables:
 
-Este projeto requer as seguintes variáveis de ambiente:
+HADOOP_HOME: Path to Hadoop Installation (ex: C:/hadoop on Windows or /usr/local/hadoop on Linux/macOS).
 
-*   `HADOOP_HOME`: Caminho para a instalação do Hadoop (ex: `C:/hadoop` no Windows ou `/usr/local/hadoop` no Linux/macOS).
-*   `SPARK_HOME`: Caminho para a instalação do Spark (ex: `C:/spark` ou `/usr/local/spark`).
+SPARK_HOME: Path to Spark installation (ex: C:/spark or /usr/local/spark).
 
-**Passos para configuração:**
+Steps for configuration:
 
-1.  Instale o Hadoop e o Spark na sua máquina.
-2.  Defina as variáveis de ambiente `HADOOP_HOME` e `SPARK_HOME` apontando para os diretórios de instalação.
-    *   **Windows:** Use as configurações de "Variáveis de Ambiente" do sistema.
-    *   **Linux/macOS:** Adicione as variáveis ao arquivo `~/.bashrc` ou `~/.zshrc` (ex: `export HADOOP_HOME=/usr/local/hadoop`).
-3.  Reinicie o terminal ou o computador para que as alterações nas variáveis de ambiente sejam aplicadas.
+Install Hadoop and Spark on your machine.
+Set the HADOOP_HOME and SPARK_HOME environment variables pointing to the installation directories.
+Windows: Use the system's "Environment Variables" settings.
+Linux/macOS: Add the variables to the ~/.bashrc or ~/.zshrc file (ex: export HADOOP_HOME=/usr/local/hadoop).
+Restart the terminal or computer for the changes to the environment variables to take effect.

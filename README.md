@@ -1,4 +1,3 @@
-%md
 # BEES-Challenge-Case-Breweries
 
 ### Objective:

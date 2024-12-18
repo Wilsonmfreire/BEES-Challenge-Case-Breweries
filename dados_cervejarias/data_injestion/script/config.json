@@ -1,0 +1,19 @@
+{
+    "layers": [
+        {
+            "order": 1,
+            "layer": "bronze",
+            "path": "dados_cervejarias\\data_lake\\bronze"
+        },
+        {
+            "order": 2,
+            "layer": "silver",
+            "path": "dados_cervejarias\\data_lake\\silver\\brewery"
+        },
+        {
+            "order": 3,
+            "layer": "gold",
+            "path": "dados_cervejarias\\data_lake\\gold"
+        }
+    ]
+}

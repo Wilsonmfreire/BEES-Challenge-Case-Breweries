@@ -33,33 +33,7 @@ def ler_configuracoes(layer_name):
     except Exception as e:
         print(f"Erro ao ler o arquivo de config: {e}")
         return None
-
-# def ler_configuracoes(layer_name):
-    
-#     nome_arquivo= "config.json"
-    
-#     try:
-#         # Obtendo diretorio atual do script
-#         diretorio_atual = os.path.dirname(__file__)
-
-#         # Criando caminho para o arquivo config.json
-#         file_path = os.path.join(diretorio_atual, nome_arquivo)
-        
-#         # Abrindo o arquivo
-#         with open(file_path, 'r') as file:
-#             data = json.load(file)
-                
-#             for item in data.get("layers", []):
-#                 if item.get("layer") == layer_name:
-#                     return item.get("path")
-                
-#         return None
-    
-#     except Exception as e:
-#         print(f"Erro ao ler o arquivo de config: {e}")
-#         return None
-    
-    
+   
 # Save Parquet File
 def save_to_parquet (dt, path):
     """
@@ -113,24 +87,6 @@ def save_to_json(json_file, path):
     with open(file_destination, 'w') as f:
         json.dump(json_file, f, indent=4)
     print(f"DataFrame saved to {file_destination}")
-
-# def read_bronze_data(spark, bronze_path):
-#     try:
-#         # Encontra todos os arquivos JSON recursivamente usando glob
-#         json_files = glob.glob(os.path.join(bronze_path, "**/*.json"), recursive=True)
-
-#         if not json_files:
-#             raise FileNotFoundError(f"Nenhum arquivo JSON encontrado em {bronze_path}")
-        
-#         latest_file = max(json_files, key=os.path.getmtime)
-#         print(f"Arquivo mais recente encontrado: {latest_file}")
-                
-#         df_bronze = spark.read.format("json") \
-#             .option("inferSchema", "true") \
-#             .option("multiline", "true") \
-#             .load(latest_file)
-#     except FileNotFoundError as e:
-#         print(f"Erro: {e}")
     
 # Obtem caminho do ultimo arquivo importado se existir
 def get_latest_folder_with_file(base_directory, target_file="data.json"):

@@ -26,3 +26,7 @@ with DAG(
         task_id="transform_silver_data",
         python_callable=transform_silver.main,
     )
+
+from dags import bronze_layer_dag  
+
+bronze_layer_dag.extract_bronze_task >> transform_silver_task

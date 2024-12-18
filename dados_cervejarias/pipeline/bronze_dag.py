@@ -1,7 +1,5 @@
 from __future__ import annotations
-
 import datetime
-
 import pendulum
 
 from airflow.models.dag import DAG
@@ -19,8 +17,8 @@ with DAG(
 ) as dag:
     extract_from_api_to_json = PapermillOperator(
         task_id="extract_api_to_json",
-        input_nb=os.path.join(DAG_FOLDER, "..", "data_injection", "notebook", "bronze_layer.ipynb"),
-        output_nb="/tmp/bronze_output.ipynb",  # Opcional
+        input_nb=os.path.join(DAG_FOLDER, "..", "data_injection", "script", "bronze_layer.py"),
+        output_nb="/tmp/bronze_output.py",  # Opcional
         parameters={
             "config_path": os.path.join(DAG_FOLDER, "..", "data_injection", "config.json"),
         },

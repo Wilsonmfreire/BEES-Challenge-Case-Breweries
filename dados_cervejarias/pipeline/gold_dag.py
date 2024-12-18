@@ -26,3 +26,7 @@ with DAG(
         task_id="load_gold_data",
         python_callable=load_gold.main,
     )
+
+from dags import silver_layer_dag 
+
+silver_layer_dag.transform_silver_task >> load_gold_task

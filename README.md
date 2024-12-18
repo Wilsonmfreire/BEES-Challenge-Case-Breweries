@@ -1,9 +1,7 @@
 %md
-# Desafio-BEES-Caso-Cervejarias
+# BEES-Challenge-Case-Breweries
 
-## Estrutura do projeto
-
-Objective:
+### Objective:
 The goal of this test is to assess your skills in consuming data from an API, transforming and
 persisting it into a data lake following the medallion architecture with three layers: raw data,
 curated data partitioned by location, and an analytical aggregated layer.
@@ -28,22 +26,23 @@ other transformations you perform.
 c. Gold Layer: Create an aggregated view with the quantity of breweries per
 type and location.
 
+## Project structure
 ```plaintext
-dados_cervejarias
+breweries_data
 ├─── data_injection/
 │    ├── notebook/
 │    │   ├── bronze_layer.ipynb
 │    │   ├── silver_layer.ipynb
 │    │   ├── gold_layer.ipynb
-│    │   ├── config.json        # Arquivo de configuração centralizado
-│    │   ├── spark_utils.py     # Funções utilitárias do Spark (se usadas por scripts)
-│    │   ├── utils.py           # Funções utilitárias centralizadas
+│    │   ├── config.json        # Centralized configuration file
+│    │   ├── spark_utils.py     # Spark utility functions (if used by scripts)
+│    │   ├── utils.py           # Centralized utility functions
 │    │   └── README.md
 │    └── script/
 │        ├── utils.py
 │        ├── config.json
-│        ├── ingestao_bronze.ipynb
-│        ├── ingestao_silver.ipynb
+│        ├── ing_bronze.ipynb
+│        ├── ing_silver.ipynb
 │        └── README.md
 ├─── datalake/
 │    ├── bronze
@@ -59,22 +58,22 @@ dados_cervejarias
 │    ├── gold_dag.py
 │    └── README.md 
 ├── README.md
-└── requerimento.txt
+└── application.txt
 ```
 
-# Configuração do Ambiente
+# Environment Configuration
 * pandas
 * pyspark
 * python 13.12.7
-Este projeto requer as seguintes variáveis de ambiente:
+This project requires the following environment variables:
 
-*   `HADOOP_HOME`: Caminho para a instalação do Hadoop (ex: `C:/hadoop` no Windows ou `/usr/local/hadoop` no Linux/macOS).
-*   `SPARK_HOME`: Caminho para a instalação do Spark (ex: `C:/spark` ou `/usr/local/spark`).
+*   `HADOOP_HOME`: Path to Hadoop Installation (ex: `C:/hadoop` on Windows or `/usr/local/hadoop` on Linux/macOS).
+*   `SPARK_HOME`: Path to Spark installation (ex: `C:/spark` or `/usr/local/spark`).
 
-**Passos para configuração:**
+**Steps for configuration:**
 
-1.  Instale o Hadoop e o Spark na sua máquina.
-2.  Defina as variáveis de ambiente `HADOOP_HOME` e `SPARK_HOME` apontando para os diretórios de instalação.
-    *   **Windows:** Use as configurações de "Variáveis de Ambiente" do sistema.
-    *   **Linux/macOS:** Adicione as variáveis ao arquivo `~/.bashrc` ou `~/.zshrc` (ex: `export HADOOP_HOME=/usr/local/hadoop`).
-3.  Reinicie o terminal ou o computador para que as alterações nas variáveis de ambiente sejam aplicadas.
+1.  Install Hadoop and Spark on your machine.
+2.  Set the `HADOOP_HOME` and `SPARK_HOME` environment variables pointing to the installation directories.
+    *   **Windows:** Use the system's "Environment Variables" settings.
+    *   **Linux/macOS:** Add the variables to the `~/.bashrc` or `~/.zshrc` file (ex: `export HADOOP_HOME=/usr/local/hadoop`).
+3.  Restart the terminal or computer for the changes to the environment variables to take effect.
